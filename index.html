@@ -12,7 +12,7 @@
             --bg-deep: #050B14;
             --bg-panel: rgba(15, 23, 42, 0.6);
             --glass-border: rgba(255, 255, 255, 0.08);
-            --primary: #00C853; /* Premium Emerald */
+            --primary: #00C853; 
             --primary-glow: rgba(0, 200, 83, 0.3);
             --text-main: #F8FAFC;
             --text-muted: #94A3B8;
@@ -39,7 +39,6 @@
             overflow-x: hidden;
         }
 
-        /* Reusable Glassmorphism */
         .glass-panel {
             background: var(--bg-panel);
             backdrop-filter: blur(16px);
@@ -49,7 +48,6 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        /* --- LANDING PAGE (HERO) --- */
         #landing-view {
             display: flex;
             flex-direction: column;
@@ -73,21 +71,9 @@
             border: 1px solid var(--primary-glow);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
+        h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
         h1 span { color: var(--primary); }
-
-        .hero-sub {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 400px;
-            margin-bottom: 40px;
-            line-height: 1.5;
-        }
+        .hero-sub { color: var(--text-muted); font-size: 1.1rem; max-width: 400px; margin-bottom: 40px; line-height: 1.5; }
 
         .btn-primary {
             background: var(--primary);
@@ -105,7 +91,6 @@
         }
         .btn-primary:active { transform: scale(0.96); }
 
-        /* --- QUIZ ENGINE --- */
         #quiz-view {
             display: none;
             flex-direction: column;
@@ -116,126 +101,39 @@
             width: 100%;
         }
 
-        .quiz-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+        .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .progress-container { flex-grow: 1; background: rgba(255,255,255,0.1); height: 8px; border-radius: 10px; margin: 0 20px; overflow: hidden; }
+        .progress-bar { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s ease; }
+        .timer { font-size: 1.2rem; font-weight: 800; color: var(--text-main); background: var(--glass-border); padding: 8px 16px; border-radius: 12px; }
 
-        .progress-container {
-            flex-grow: 1;
-            background: rgba(255,255,255,0.1);
-            height: 8px;
-            border-radius: 10px;
-            margin: 0 20px;
-            overflow: hidden;
-        }
-        .progress-bar {
-            height: 100%;
-            background: var(--primary);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .timer {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--text-main);
-            background: var(--glass-border);
-            padding: 8px 16px;
-            border-radius: 12px;
-        }
-
-        .question-box {
-            padding: 30px 20px;
-            margin-bottom: 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            line-height: 1.6;
-            text-align: left;
-        }
-
-        .options-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+        .question-box { padding: 30px 20px; margin-bottom: 20px; font-size: 1.25rem; font-weight: 600; line-height: 1.6; text-align: left; }
+        .options-grid { display: flex; flex-direction: column; gap: 12px; }
 
         .option-btn {
-            background: var(--bg-panel);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main);
-            padding: 18px 20px;
-            border-radius: 16px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.2s;
+            background: var(--bg-panel); border: 1px solid var(--glass-border); color: var(--text-main);
+            padding: 18px 20px; border-radius: 16px; font-size: 1.05rem; font-weight: 600;
+            text-align: left; display: flex; align-items: center; cursor: pointer; transition: all 0.2s;
         }
-        .option-btn span.letter {
-            color: var(--text-muted);
-            margin-right: 15px;
-            font-weight: 800;
-        }
+        .option-btn span.letter { color: var(--text-muted); margin-right: 15px; font-weight: 800; }
         .option-btn.locked { background: var(--text-main); color: #000; }
         .option-btn.correct { background: var(--primary); color: #000; border-color: var(--primary); box-shadow: 0 0 15px var(--primary-glow); }
         .option-btn.wrong { background: var(--wrong); color: #fff; border-color: var(--wrong); box-shadow: 0 0 15px var(--wrong-glow); }
 
         .explanation-box {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(0, 200, 83, 0.05);
-            border-left: 4px solid var(--primary);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-            animation: fadeIn 0.4s ease;
+            display: none; margin-top: 20px; padding: 20px; background: rgba(0, 200, 83, 0.05);
+            border-left: 4px solid var(--primary); border-radius: 8px; font-size: 0.95rem;
+            color: var(--text-muted); line-height: 1.5; animation: fadeIn 0.4s ease;
         }
 
-        /* --- ANALYTICS DASHBOARD --- */
-        #result-view {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            width: 100%;
-            max-width: 400px;
-            margin: 30px 0;
-        }
-
-        .stat-card {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-        }
+        #result-view { display: none; flex-direction: column; align-items: center; justify-content: center; flex-grow: 1; padding: 20px; text-align: center; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; max-width: 400px; margin: 30px 0; }
+        .stat-card { padding: 20px; display: flex; flex-direction: column; }
         .stat-value { font-size: 2rem; font-weight: 800; color: var(--primary); }
         .stat-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
 
         .sponsor-banner {
-            margin-top: auto;
-            background: rgba(255, 255, 255, 0.03);
-            border-top: 1px solid var(--glass-border);
-            padding: 15px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 600;
+            margin-top: auto; background: rgba(255, 255, 255, 0.03); border-top: 1px solid var(--glass-border);
+            padding: 15px; text-align: center; text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 600;
         }
         .sponsor-banner span { color: var(--primary); }
 
@@ -248,7 +146,7 @@
         <div class="hero-badge">⚡ NEUROKBC v2.0</div>
         <h1>Master NEET <span>2026</span></h1>
         <p class="hero-sub">Daily timed mocks, exact NTA patterns, and instant PYQ explanations. Stop guessing, start ranking.</p>
-        <button class="btn-primary" onclick="initiateQuiz()">Start Free Daily Mock</button>
+        <button class="btn-primary" onclick="initiateQuiz()" id="start-btn">Start Free Daily Mock</button>
         <div style="margin-top: 30px; display: flex; gap: 20px; color: var(--text-muted); font-size: 0.85rem;">
             <div>📝 200+ Questions</div>
             <div>⏱️ NTA Pattern</div>
@@ -257,7 +155,7 @@
 
     <div id="quiz-view">
         <div class="quiz-header">
-            <div style="font-weight: 800; color: var(--text-muted);" id="q-counter">Q 1/5</div>
+            <div style="font-weight: 800; color: var(--text-muted);" id="q-counter">Q 1/--</div>
             <div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
             <div class="timer" id="timer">30s</div>
         </div>
@@ -297,63 +195,17 @@
                 <div class="stat-label">Predicted All India Rank (Simulated)</div>
             </div>
         </div>
-
         <button class="btn-primary" onclick="location.reload()">Practice Again</button>
     </div>
 
-    <a href="https://www.instagram.com/_sanjayvarma_07?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=" target="_blank" class="sponsor-banner">
+    <a href="https://ig.me/m/the_epic_verse" target="_blank" class="sponsor-banner">
         Powered by <span>THE EPIC VERSE</span>. Tap to Sponsor this App.
     </a>
 
     <script>
-        // High-Quality Fallback Database (NEET PYQs with Explanations)
-        // This ensures the app NEVER crashes or freezes, delivering instant value.
         const localDatabase = [
-            {
-                q: "The phenomenon of pleiotropy refers to:",
-                a: "Presence of several alleles of a single gene controlling a single crossover",
-                b: "Presence of two alleles, each of the two genes controlling a single trait",
-                c: "A single gene affecting multiple phenotypic expression",
-                d: "Multiple genes affecting a single phenotype",
-                correct: "C",
-                explanation: "Pleiotropy occurs when one single gene influences two or more seemingly unrelated phenotypic traits. A classic example in human genetics is Phenylketonuria (PKU)."
-            },
-            {
-                q: "Which of the following is an occupational respiratory disorder?",
-                a: "Anthracis",
-                b: "Silicosis",
-                c: "Botulism",
-                d: "Emphysema",
-                correct: "B",
-                explanation: "Silicosis is an occupational lung disease caused by inhalation of crystalline silica dust, common in mining and stone crushing industries."
-            },
-            {
-                q: "In a chloroplast, the highest number of protons are found in:",
-                a: "Intermembrane space",
-                b: "Antennae complex",
-                c: "Stroma",
-                d: "Lumen of thylakoids",
-                correct: "D",
-                explanation: "During light reactions, the splitting of water and movement of electrons pumps protons into the thylakoid lumen, creating a high proton gradient for ATP synthesis."
-            },
-            {
-                q: "Select the mismatch:",
-                a: "Cycas - Dioecious",
-                b: "Salvinia - Heterosporous",
-                c: "Equisetum - Homosporous",
-                d: "Pinus - Dioecious",
-                correct: "D",
-                explanation: "Pinus is a monoecious plant, meaning both male and female cones are borne on the same tree. Cycas is dioecious."
-            },
-            {
-                q: "The DNA fragments separated on an agarose gel can be visualized after staining with:",
-                a: "Acetocarmine",
-                b: "Aniline blue",
-                c: "Ethidium bromide",
-                d: "Bromophenol blue",
-                correct: "C",
-                explanation: "Ethidium bromide (EtBr) intercalates between DNA base pairs and fluoresces bright orange when exposed to UV light, allowing visualization of DNA bands."
-            }
+            { q: "The phenomenon of pleiotropy refers to:", a: "Several alleles controlling one crossover", b: "Two alleles controlling one trait", c: "A single gene affecting multiple phenotypic expression", d: "Multiple genes affecting a single phenotype", correct: "C", explanation: "Pleiotropy occurs when one single gene influences two or more seemingly unrelated phenotypic traits." },
+            { q: "Which of the following is an occupational respiratory disorder?", a: "Anthracis", b: "Silicosis", c: "Botulism", d: "Emphysema", correct: "B", explanation: "Silicosis is an occupational lung disease caused by inhalation of silica dust." }
         ];
 
         let questions = [];
@@ -364,32 +216,72 @@
         let timerInt;
         let isLocked = false;
 
-        // UI Elements
         const viewLanding = document.getElementById('landing-view');
         const viewQuiz = document.getElementById('quiz-view');
         const viewResult = document.getElementById('result-view');
         const btnOptions = { 'A': document.getElementById('btn-A'), 'B': document.getElementById('btn-B'), 'C': document.getElementById('btn-C'), 'D': document.getElementById('btn-D') };
 
+        // CSV Parser Engine
+        function parseCSV(str) {
+            const arr = []; let quote = false; let row = 0, col = 0;
+            for (let c = 0; c < str.length; c++) {
+                let cc = str[c], nc = str[c+1];
+                arr[row] = arr[row] || []; arr[row][col] = arr[row][col] || '';
+                if (cc == '"' && quote && nc == '"') { arr[row][col] += cc; ++c; continue; }
+                if (cc == '"') { quote = !quote; continue; }
+                if (cc == ',' && !quote) { ++col; continue; }
+                if (cc == '\r' && nc == '\n' && !quote) { ++row; col = 0; ++c; continue; }
+                if (cc == '\n' && !quote) { ++row; col = 0; continue; }
+                if (cc == '\r' && !quote) { ++row; col = 0; continue; }
+                arr[row][col] += cc;
+            }
+            return arr;
+        }
+
         async function initiateQuiz() {
-            viewLanding.style.display = 'none';
-            viewQuiz.style.display = 'flex';
+            document.getElementById('start-btn').innerText = "Syncing Database...";
+            document.getElementById('start-btn').style.opacity = "0.7";
             
-            // Fast Fetch Logic: Try Google Sheet, but fallback to local instantly if it takes > 1.5s
             const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQQTMdXwy6iBF5x_r3D71I80ebFMtkmzFqWiu0pYSW2wq2ZAZrDHcyS9B9K6EFEoymB8ntYWBEl274t/pub?output=csv";
             
             try {
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 1500); // 1.5 second patience
+                const timeoutId = setTimeout(() => controller.abort(), 4000); // Give it 4 seconds to download 200 questions
                 const res = await fetch(sheetURL, { signal: controller.signal });
+                clearTimeout(timeoutId);
                 const text = await res.text();
-                // Basic CSV parse (If you added explanations to Col 10, extract them here in future)
-                // For now, if fetch succeeds but lacks explanations, we still use local DB to maintain premium quality
-                questions = localDatabase; 
+                const data = parseCSV(text);
+                
+                let liveQuestions = [];
+                for (let i = 1; i < data.length; i++) {
+                    let row = data[i];
+                    if (!row || row.length < 5) continue; 
+                    
+                    let q = row[3] ? row[3].trim() : "";
+                    let a = row[4] ? row[4].trim() : "";
+                    let b = row[5] ? row[5].trim() : "";
+                    let c = row[6] ? row[6].trim() : "";
+                    let d = row[7] ? row[7].trim() : "";
+                    let ans = row[8] ? row[8].trim().toUpperCase() : "";
+                    let exp = (row.length > 9 && row[9]) ? row[9].trim() : "Correct answer marked. Keep revising NCERT Concepts!";
+                    
+                    if (q !== "" && ans !== "") {
+                        liveQuestions.push({ q: q, a: a, b: b, c: c, d: d, correct: ans, explanation: exp });
+                    }
+                }
+                
+                if (liveQuestions.length > 0) {
+                    questions = liveQuestions;
+                } else {
+                    throw new Error("No valid questions found.");
+                }
             } catch (e) {
-                console.log("Using Premium Local Database for instant loading.");
+                console.log("Connection slow. Using offline fallback.");
                 questions = localDatabase;
             }
             
+            viewLanding.style.display = 'none';
+            viewQuiz.style.display = 'flex';
             loadQuestion();
         }
 
@@ -405,17 +297,14 @@
             document.getElementById('opt-D-text').innerText = q.d;
             document.getElementById('q-counter').innerText = `Q ${currentIndex + 1}/${questions.length}`;
             
-            // Progress Bar
             const prog = ((currentIndex) / questions.length) * 100;
             document.getElementById('progress-bar').style.width = `${prog}%`;
 
-            // Reset Buttons
             Object.values(btnOptions).forEach(btn => {
                 btn.className = 'option-btn';
                 btn.style.borderColor = 'var(--glass-border)';
             });
 
-            // Start Timer
             timeLeft = 30;
             document.getElementById('timer').innerText = timeLeft + 's';
             document.getElementById('timer').style.color = 'var(--text-main)';
@@ -437,29 +326,25 @@
             clearInterval(timerInt);
             
             const correctAns = questions[currentIndex].correct;
-            
-            // Lock styling
             if(sel !== 'TIMEOUT') btnOptions[sel].classList.add('locked');
 
             setTimeout(() => {
-                // Reveal logic
                 if(sel === correctAns) {
                     btnOptions[sel].classList.replace('locked', 'correct');
-                    score += 4; // NEET pattern: +4
+                    score += 4; 
                     correctAnswers++;
                 } else {
                     if(sel !== 'TIMEOUT') {
                         btnOptions[sel].classList.replace('locked', 'wrong');
-                        score -= 1; // NEET pattern: -1
+                        score -= 1; 
                     }
-                    btnOptions[correctAns].classList.add('correct');
+                    if(btnOptions[correctAns]) btnOptions[correctAns].classList.add('correct');
                 }
 
-                // Show Explanation
                 document.getElementById('explanation-text').innerText = questions[currentIndex].explanation;
                 document.getElementById('explanation-box').style.display = 'block';
 
-            }, 600); // 0.6s KBC suspense delay
+            }, 600); 
         }
 
         function nextQuestion() {
@@ -472,12 +357,10 @@
             viewQuiz.style.display = 'none';
             viewResult.style.display = 'flex';
             
-            // Calculate Analytics
             document.getElementById('final-score').innerText = score;
             const acc = Math.round((correctAnswers / questions.length) * 100);
             document.getElementById('accuracy').innerText = acc + '%';
             
-            // Simulated Gamified Rank Predictor
             let rank = "Needs Work";
             if(acc === 100) rank = "Top 500 AIIMS Tier";
             else if(acc >= 80) rank = "Top 5,000 Govt Seat";
